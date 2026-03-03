@@ -1,3 +1,7 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -19,12 +23,16 @@ body {
   line-height: 1.6;
 }
 
+/* ========================= */
 /* HEADER */
+/* ========================= */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.8rem 2rem;
+  flex-wrap: wrap;
 }
 
 .header h1 {
@@ -38,40 +46,74 @@ body {
   opacity: 0.8;
 }
 
+/* ========================= */
 /* NAV */
+/* ========================= */
+
 .nav a {
   margin-left: 1.2rem;
   text-decoration: none;
   color: var(--muted);
+  transition: 0.3s ease;
 }
 
 .nav a:hover {
   color: var(--accent);
 }
 
-/* GAME LINK SECTION */
+/* ========================= */
+/* GAME SECTION */
+/* ========================= */
+
 .game-link {
   text-align: center;
   padding: 3rem 1rem 2.5rem;
   background: linear-gradient(180deg, #0b1020, transparent);
 }
 
-.itch-link {
-  display: inline-block;
-  margin: 1.5rem 0;
-  padding: 0.8rem 1.6rem;
-  background: var(--accent);
-  color: #020617;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 999px;
+.game-link h2 {
+  color: var(--accent);
 }
 
-.itch-link:hover {
-  opacity: 0.85;
+/* ITCH EMBED */
+
+.game-embed {
+  max-width: 980px;
+  margin: 2rem auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid rgba(125, 211, 252, 0.15);
 }
 
+.game-embed iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+}
+
+/* Responsive iframe */
+@media (max-width: 768px) {
+  .game-embed iframe {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-embed iframe {
+    height: 350px;
+  }
+}
+
+/* ========================= */
 /* RATING */
+/* ========================= */
+
+.rating {
+  margin-top: 1.5rem;
+}
+
 .rating span {
   display: block;
   margin-bottom: 0.5rem;
@@ -91,6 +133,7 @@ body {
   font-size: 2rem;
   color: #334155;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .stars input:checked ~ label,
@@ -99,7 +142,10 @@ body {
   color: gold;
 }
 
+/* ========================= */
 /* SECTIONS */
+/* ========================= */
+
 .section {
   max-width: 1000px;
   margin: 0 auto;
@@ -111,7 +157,10 @@ body {
   color: var(--accent);
 }
 
+/* ========================= */
 /* DESIGN PILLARS */
+/* ========================= */
+
 .pillars {
   display: grid;
   gap: 1.5rem;
@@ -125,7 +174,7 @@ body {
 }
 
 /* ========================= */
-/* GALLERY – 3 arriba / 3 abajo */
+/* GALLERY */
 /* ========================= */
 
 .gallery {
@@ -139,10 +188,9 @@ body {
   background: var(--panel);
   aspect-ratio: 16 / 9;
   border-radius: 12px;
-  overflow: hidden;          /* 🔥 importante para que la imagen no se salga */
+  overflow: hidden;
 }
 
-/* 🔥 NUEVO: imagen adaptada al contenedor */
 .placeholder img {
   width: 100%;
   height: 100%;
@@ -150,7 +198,8 @@ body {
   display: block;
 }
 
-/* Responsive */
+/* Responsive gallery */
+
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -163,28 +212,32 @@ body {
   }
 }
 
-/* VIDEO PLAYER */
+/* ========================= */
+/* VIDEO */
+/* ========================= */
 
 .video-container {
   margin-top: 1.5rem;
   border-radius: 12px;
   overflow: hidden;
   background: var(--panel);
+  border: 1px solid rgba(125, 211, 252, 0.15);
 }
 
 .video-container video {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
 }
 
+/* ========================= */
 /* FOOTER */
+/* ========================= */
+
 .footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.85rem;
   opacity: 0.6;
 }
-
 
